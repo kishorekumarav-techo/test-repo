@@ -12,5 +12,7 @@ def my_receiver(sender, **kwargs):
 # Connect the signal
 my_signal.connect(my_receiver)
 
+print("Something")
+
 # 🚫 This line violates the rule: using the 'weak' argument
 my_signal.disconnect(my_receiver, weak=False)
