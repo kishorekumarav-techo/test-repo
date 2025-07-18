@@ -15,5 +15,6 @@ my_signal.connect(my_receiver)
 print("Something")
 print("new changes for feature branch")
 
+
 # 🚫 This line violates the rule: using the 'weak' argument
 my_signal.disconnect(my_receiver, weak=False)
