@@ -6,15 +6,15 @@ from django.dispatch import Signal
 my_signal = Signal()
 
 # Define a dummy receiver
-def my_receiver(sender, **kwargs):
-    print("Signal received.")
+def handle_custom_signal(sender, **kwargs):
+    print("Custom signal received.")
 
 # Connect the signal
-my_signal.connect(my_receiver)
+my_signal.connect(handle_custom_signal)
 
 print("Something")
 print("new changes for feature branch")
 
 
 # 🚫 This line violates the rule: using the 'weak' argument
-my_signal.disconnect(my_receiver, weak=False)
+my_signal.disconnect(handle_custom_signal, weak=False)
