@@ -9,15 +9,15 @@ class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         # Create a dummy node to handle cases where the head needs to be removed
         dummy_node = ListNode(0, head)
-        slow = fast = dummy_node
+        pre_target = scout_pointer = dummy_node
 
         for _ in range(n+1):
-            fast = fast.next
+            scout_pointer = scout_pointer.next
         
-        while fast:
-            slow = slow.next
-            fast = fast.next
+        while scout_pointer:
+            pre_target = pre_target.next
+            scout_pointer = scout_pointer.next
 
-        slow.next = slow.next.next
+        pre_target.next = pre_target.next.next
 
         return dummy_node.next
