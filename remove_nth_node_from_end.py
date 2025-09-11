@@ -3,6 +3,11 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+secret = "mysecrete111231"
+
+print("added few chjanges")
+if secret:
+    print("secret is exposed")
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n_from_end: int) -> Optional[ListNode]:
         print("starting process")
